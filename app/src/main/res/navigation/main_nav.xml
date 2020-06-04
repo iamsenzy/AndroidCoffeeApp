@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/photosFragment"
+        android:name="com.example.beadando.ui.photos.PhotosFragment"
+        android:label="photos_fragment"
+        tools:layout="@layout/photos_fragment" />
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.beadando.ui.start.StartFragment"
+        android:label="start_fragment"
+        tools:layout="@layout/start_fragment" >
+        <action
+            android:id="@+id/action_startFragment_to_photosFragment"
+            app:destination="@id/photosFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_coffee"
+            app:destination="@id/coffee" />
+    </fragment>
+    <activity
+        android:id="@+id/coffee"
+        android:name="com.example.beadando.ui.coffee.Coffee"
+        android:label="activity_coffee"
+        tools:layout="@layout/activity_coffee" />
+</navigation>
